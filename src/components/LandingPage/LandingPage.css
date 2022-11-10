@@ -1,0 +1,9 @@
+.landing-page {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.explore-btn-section {
+    margin-top: 400px;
+}
