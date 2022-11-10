@@ -1,9 +1,10 @@
 import React from "react"
+import { LandingPage } from "../LandingPage/LandingPage";
 import './App.css';
 
-function App() {
+const App = () => {
   return (
-   <h1>Tune Out</h1>
+   <LandingPage />
   );
 }
 
