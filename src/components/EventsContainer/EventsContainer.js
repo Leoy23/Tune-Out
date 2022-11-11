@@ -20,13 +20,12 @@ export const EventsContainer = (seattleRapEvents) => {
   }
 
   const seattleRapCards = getEvents().map((rapEvent, index) => {
-    // console.log("rapEvent", rapEvent[0].name)
     let newRapEvent = [];
     rapEvent.forEach((show) => {
         newRapEvent.push(show)
     })
     const seattleRap = newRapEvent.map(eachShow => {
-        console.log(eachShow.url)
+        console.log(eachShow._embedded.venues[0])
         return (
               <EventCards
                 id={eachShow.id}
