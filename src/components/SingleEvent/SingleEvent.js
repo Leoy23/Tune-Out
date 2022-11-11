@@ -9,17 +9,17 @@ export const SingleEvent = () => {
     const [singleError, setSingleError] = useState("")
 
     const getSingleData = (id, index) => {
+        console.log("Anything here?")
       return fetchSingleEvent(`${id}`)
         .then(data => {
-            console.log("hello", data[index]._embedded.events)
             setSingleEvent(data)
         })
         .catch(error => setSingleError(error))
     }
     console.log(getSingleData())
-    // useEffect(() => {
-    //   getSingleData();  
-    // }, [])
+    useEffect(() => {
+      getSingleData();  
+    }, [])
 
   return (
     <section className='singe-event-container'>

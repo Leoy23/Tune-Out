@@ -9,15 +9,14 @@ export const EventsContainer = (seattleRapEvents) => {
     const testTwo = test.forEach((event) => {
       arr1.push(seattleRapEvents[event])
     });
-    return arr1;
-  };
-
-  const seattleRapCards = getEvents().map((rapEvent, index) => {
-    let eventsArr = [];
-    rapEvent.forEach((show) => {
-        eventsArr.push(show)
+    const allEvents = arr1.map((rapEvent) => {
+      let eventsArr1 = []
+      rapEvent.forEach((show) => {
+        eventsArr1.push(show)
+      })
+      return eventsArr1;
     })
-  const allEvents = eventsArr.map(eachShow => {
+    const eventCards = allEvents.map(eachShow => {
       return (
             <EventCards
               id={eachShow.id}
@@ -28,13 +27,13 @@ export const EventsContainer = (seattleRapEvents) => {
               key={eachShow.id}
             />
         )
-  })
-    return allEvents;
-  })
+    })
+    return eventCards;
+  };
 
   return (
     <div>
-        {seattleRapCards}
+        {getEvents()}
     </div>
   )
 };

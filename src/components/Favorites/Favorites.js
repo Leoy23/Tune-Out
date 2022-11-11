@@ -1,10 +1,13 @@
-import React from 'react'
+// import React from 'react'
 
-export const Favorites = () => {
-  return (
-    <div>
-      <h2>These are our favorites</h2>
-    </div>
-  )
-}
+// export const Favorites = () => {
+//   return (
+//     <div>
+//       <img src={img} alt='artist'/>  
+//       <h3>{name}</h3>
+//       <p>{date}</p>
+//       <p>{url}</p>
+//     </div>
+//   )
+// }
 

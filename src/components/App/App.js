@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react"
 import { Switch, Route } from "react-router-dom"
 import { LandingPage } from "../LandingPage/LandingPage";
 import { EventsContainer } from "../EventsContainer/EventsContainer";
-import { SingleEvent } from "../SingleEvent/SingleEvent"
-import { Favorites } from "../FavoritesContainer/FavoritesContainer";
-import { NavBar } from "../NavBar/NavBar"
+// import { SingleEvent } from "../SingleEvent/SingleEvent";
+import { FavoritesContainer } from "../FavoritesContainer/FavoritesContainer";
+import { NavBar } from "../NavBar/NavBar";
 import { fetchAllEvents } from "../../apiCalls";
 import './App.css';
 
@@ -16,6 +16,7 @@ const App = () => {
   const [portlandRapEvents, setPortlandRapEvents] = useState([])
   const [portlandRBEvents, setPortlandRBEvents] = useState([])
   const [error, setError] = useState('')
+  const [favs, setFavs] = useState([])
   const [favStatus, setFavStatus] = useState(false)
 
   useEffect(() =>  {
@@ -39,6 +40,25 @@ const App = () => {
     getPromises();
   }, [])
 
+  const addToFavs = (id, name, date, url) => {
+    const favEvent = {
+      id: id,
+      name: name,
+      date: date,
+      url: url
+    }
+      if (!favs.some(fav => fav.id === id)) {
+        setFavs([...favs, favEvent]);
+        setFavStatus(true);
+      }
+  }
+
+  const deleteFav = (id) => {
+    const filteredFavs = favs.filter(fav => fav.id !== id);
+    setFavs(filteredFavs);
+    setFavStatus(false);
+  }
+
   return (
     <main className="home-page">
       {error ? <h2 className="error-msg">{error}</h2> : 
@@ -48,11 +68,13 @@ const App = () => {
         <Route exact path="/home-page">
           <NavBar />
           <EventsContainer 
+            // favStatus={favStatus}
+            // addToFavs={addToFavs} 
             seattleRapEvents={seattleRapEvents} 
             seattleRBEvents={seattleRBEvents} 
             portlandRapEvents={portlandRapEvents} 
             portlandRBEvents={portlandRBEvents}
-            // favStatus={favStatus} 
+
           />
         </Route>
         {/* <Route exact to="/:id" render={({ match }) => {
@@ -63,7 +85,7 @@ const App = () => {
         }}>
         </Route> */}
         <Route path="/favorites">
-          <Favorites />
+          <FavoritesContainer deleteFav={deleteFav}/>
         </Route>
       </Switch>}
     </main>
