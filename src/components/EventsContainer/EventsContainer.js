@@ -20,11 +20,11 @@ export const EventsContainer = (seattleRapEvents) => {
   }
 
   const seattleRapCards = getEvents().map((rapEvent, index) => {
-    let newRapEvent = [];
+    let eventsArr = [];
     rapEvent.forEach((show) => {
-        newRapEvent.push(show)
+        eventsArr.push(show)
     })
-    const seattleRap = newRapEvent.map(eachShow => {
+    const allEvents = eventsArr.map(eachShow => {
         console.log(eachShow._embedded.venues[0])
         return (
               <EventCards
@@ -37,7 +37,7 @@ export const EventsContainer = (seattleRapEvents) => {
               />
           )
     })
-    return seattleRap;
+    return allEvents;
   })
 
   return (
