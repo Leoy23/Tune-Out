@@ -7,7 +7,6 @@ const EventCards = ({id, date, name, url, img}) => {
       <h3>{name}</h3>
       <p>{date}</p>
       <p>{url}</p>
-      <button>Event Details</button>
     </div>
   )
 }

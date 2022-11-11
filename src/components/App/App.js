@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react"
 import { Switch, Route } from "react-router-dom"
 import { LandingPage } from "../LandingPage/LandingPage";
 import { EventsContainer } from "../EventsContainer/EventsContainer";
+import { SingleEvent } from "../SingleEvent/SingleEvent"
 import { Favorites } from "../FavoritesContainer/FavoritesContainer";
 import { NavBar } from "../NavBar/NavBar"
-import { fetchRapData, fetchRBData } from "../../apiCalls";
+import { fetchAllEvents } from "../../apiCalls";
 import './App.css';
 
 
@@ -19,10 +20,10 @@ const App = () => {
 
   useEffect(() =>  {
     const getPromises = () => {
-      let seattleRapEvents = fetchRapData(385)
-      let seattleRBEvents = fetchRBData(385)
-      let portlandRapEvents = fetchRapData(362)
-      let portlandRBEvents = fetchRBData(362)
+      let seattleRapEvents = fetchAllEvents("KnvZfZ7vAv1",385)
+      let seattleRBEvents = fetchAllEvents("KnvZfZ7vAee", 385)
+      let portlandRapEvents = fetchAllEvents("KnvZfZ7vAv1",362)
+      let portlandRBEvents = fetchAllEvents("KnvZfZ7vAee", 362)
       Promise.all([seattleRBEvents, seattleRapEvents, portlandRBEvents, portlandRapEvents])
         .then(data => {
           setSeattleRBEvents(data[0]._embedded.events)
@@ -36,13 +37,14 @@ const App = () => {
         })
     }
     getPromises();
-  }, [error])
+  }, [])
 
   return (
     <main className="home-page">
       {error ? <h2 className="error-msg">{error}</h2> : 
       <Switch>
-        <Route exact path="/" component={() => <LandingPage />}></Route>
+        <Route exact path="/" component={() => <LandingPage />}>
+        </Route>
         <Route exact path="/home-page">
           <NavBar />
           <EventsContainer 
@@ -53,9 +55,16 @@ const App = () => {
             // favStatus={favStatus} 
           />
         </Route>
-        {/* <Route path="/favorites">
-          <Favorites />
+        {/* <Route exact to="/:id" render={({ match }) => {
+          console.log("Here", match)
+          return <SingleEvent 
+          id={match.params.id}
+          />
+        }}>
         </Route> */}
+        <Route path="/favorites">
+          <Favorites />
+        </Route>
       </Switch>}
     </main>
 

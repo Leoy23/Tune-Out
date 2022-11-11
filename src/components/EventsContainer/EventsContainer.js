@@ -1,5 +1,6 @@
 import React from "react";
 import EventCards from "../EventCards/EventCards";
+import "./EventsContainer.css"
 
 export const EventsContainer = (seattleRapEvents) => {
   const getEvents = () => {
@@ -11,32 +12,23 @@ export const EventsContainer = (seattleRapEvents) => {
     return arr1;
   };
 
-  const newFunc = () => {
-    let arr2 = []
-    getEvents().forEach((data) => {
-        arr2.push(data)
-    })
-    return arr2;
-  }
-
   const seattleRapCards = getEvents().map((rapEvent, index) => {
     let eventsArr = [];
     rapEvent.forEach((show) => {
         eventsArr.push(show)
     })
-    const allEvents = eventsArr.map(eachShow => {
-        console.log(eachShow._embedded.venues[0])
-        return (
-              <EventCards
-                id={eachShow.id}
-                img={eachShow.images[0]}
-                url={eachShow.url}
-                name={eachShow.name}
-                date={eachShow.dates.start.localDate}
-                key={eachShow.id}
-              />
-          )
-    })
+  const allEvents = eventsArr.map(eachShow => {
+      return (
+            <EventCards
+              id={eachShow.id}
+              img={eachShow.images[0]}
+              url={eachShow.url}
+              name={eachShow.name}
+              date={eachShow.dates.start.localDate}
+              key={eachShow.id}
+            />
+        )
+  })
     return allEvents;
   })
 

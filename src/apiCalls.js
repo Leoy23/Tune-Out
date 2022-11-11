@@ -1,5 +1,5 @@
-export const fetchRapData = (cityId) => {
-    return fetch(`https://app.ticketmaster.com/discovery/v2/events.json?classificationId=KnvZfZ7vAv1&dmaId=${cityId}&apikey=RdUo6tjbk6yRqYpxV6mSAOXBA9wnvZ3S`)
+export const fetchAllEvents = (eventId, cityId) => {
+    return fetch(`https://app.ticketmaster.com/discovery/v2/events.json?classificationId=${eventId}&dmaId=${cityId}&apikey=RdUo6tjbk6yRqYpxV6mSAOXBA9wnvZ3S`)
     .then(response => {
       if (!response.ok) {
         throw new Error(`${response.status}`)
@@ -8,12 +8,13 @@ export const fetchRapData = (cityId) => {
     });
 };
 
-export const fetchRBData = (cityId) => {
-  return fetch(`https://app.ticketmaster.com/discovery/v2/events.json?classificationId=KnvZfZ7vAee&dmaId=${cityId}&apikey=RdUo6tjbk6yRqYpxV6mSAOXBA9wnvZ3S`)
+export const fetchSingleEvent = (id) => {
+  return fetch(`https://app.ticketmaster.com/discovery/v2/events/${id}.json?&apikey=RdUo6tjbk6yRqYpxV6mSAOXBA9wnvZ3S`)
   .then(response => {
     if (!response.ok) {
       throw new Error(`${response.status}`)
     }
+    console.log(response)
       return response.json()
   });
 };
