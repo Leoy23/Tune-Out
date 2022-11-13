@@ -1,5 +1,6 @@
 import PropTypes from "prop-types"
 import React from "react";
+import "./EventCards.css"
 
 const EventCards = ({
   id,
@@ -15,16 +16,17 @@ const EventCards = ({
 
   const text = favStatus === true ? "Un-Fave" : "Fave";
   return (
-    <div>
+    <article className="display-cards">
       <img src={image} alt="artist" />
       <h3>{name}</h3>
       <p>{date}</p>
       <i><h4>{venue}</h4></i>
       <p>{url}</p>
       {favStatus && (
-        <span className="update-favs">Added to your favorites!</span>
+        <span className="update-favs">Added to your faves!</span>
       )}
       <button
+      className="fav-btn"
         onClick={
           favStatus === true 
             ? () => deleteFav(id)
@@ -33,7 +35,7 @@ const EventCards = ({
       >
         {text}
       </button>
-    </div>
+    </article>
   );
 };
 

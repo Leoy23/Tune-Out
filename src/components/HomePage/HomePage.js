@@ -2,6 +2,7 @@ import PropTypes from "prop-types"
 import React from "react";
 import { EventsContainer } from "../EventsContainer/EventsContainer";
 import { NavBar } from "../NavBar/NavBar";
+import "./HomePage.css"
 
 const HomePage = ({
   favStatus,
