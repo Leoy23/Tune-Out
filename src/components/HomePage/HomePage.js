@@ -13,8 +13,6 @@ const HomePage = ({
   addToFavs,
   deleteFav,
 }) => {
-  console.log(seattleRapEvents);
-
   return (
     <div className="home">
       <NavBar />
@@ -34,7 +32,6 @@ const HomePage = ({
 HomePage.propTypes = {
   addToFavs: PropTypes.func.isRequired,
   deleteFav: PropTypes.func.isRequired,
-  favStatus: PropTypes.bool.isRequired,
   portlandRBEvents: PropTypes.array,
   portlandRapEvents: PropTypes.array,
   seattleRBEvents: PropTypes.array,

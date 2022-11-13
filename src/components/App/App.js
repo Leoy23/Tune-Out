@@ -3,7 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import { LandingPage } from "../LandingPage/LandingPage";
 // import { SingleEvent } from "../SingleEvent/SingleEvent";
 import { FavoritesContainer } from "../FavoritesContainer/FavoritesContainer";
-import { fetchAllEvents } from "../../apiCalls";
+import { fetchAllEvents } from "../../utils/apiCalls";
 import "./App.css";
 import HomePage from "../HomePage/HomePage";
 
@@ -15,7 +15,6 @@ const App = () => {
   const [portlandRBEvents, setPortlandRBEvents] = useState([]);
   const [error, setError] = useState("");
   const [favs, setFavs] = useState([]);
-  const [favStatus, setFavStatus] = useState(false);
 
   useEffect(() => {
     const getPromises = () => {
@@ -42,30 +41,22 @@ const App = () => {
     getPromises();
   }, []);
 
-  const addToFavs = (id, name, date, url, image) => {
+  const addToFavs = (id, name, date, url) => {
     const favEvent = {
       id,
       name,
       date,
       url,
     };
-    console.log(favEvent)
-    const fav = () => {
-        if (favs.some((fav) => fav.id !== favEvent.id)) {
-          setFavStatus(false);
-      } else {
-        setFavStatus(true);
-        setFavs([...favs, favEvent]);
-      }
-    };
-    fav();
+
+    const filtered = favs.filter((f) => f.id !== favEvent.id);
+    favs.length ? setFavs([...filtered, favEvent]) : setFavs([favEvent])
 
   };
 
   const deleteFav = (id) => {
     const filteredFavs = favs.filter((fav) => fav.id !== id);
     setFavs(filteredFavs);
-    setFavStatus(false);
   };
 
   return (
@@ -84,7 +75,7 @@ const App = () => {
               addToFavs={addToFavs}
               deleteFav={deleteFav}
               // setGoToHome={setGoToHome}
-              favStatus={favStatus}
+              // favStatus={favStatus}
             />
           )}
         ></Route>
