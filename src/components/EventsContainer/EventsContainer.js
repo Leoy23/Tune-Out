@@ -1,49 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import EventCards from "../EventCards/EventCards";
 
-export const EventsContainer = (seattleRapEvents) => {
+export const EventsContainer = ({
+  seattleRapEvents,
+  seattleRBEvents,
+  portlandRBEvents,
+  portlandRapEvents,
+  setSeattleRapEvents,
+  setSeattleRBEvents,
+  setPortlandRapEvents,
+  setPortlandRBEvents,
+  addToFavs,
+  favStatus,
+  deleteFav
+}) => {
+
+
   const getEvents = () => {
     let test = Object.keys(seattleRapEvents);
     let arr1 = [];
+    let idArr = []
     const testTwo = test.forEach((event) => {
       arr1.push(seattleRapEvents[event])
+      idArr.push(seattleRapEvents[event].id)
     });
+    console.log(23, arr1);
+    console.log(33, idArr)
     return arr1;
   };
+  const allEventCards = getEvents().map((event) => {
+    return (
+          <EventCards
+            id={event.id}
+            name={event.name}
+            date={event.dates.start.localDate}
+            url={event.url}
+            img={event.images[0]}
+            key={event.id}
+            addToFavs={addToFavs}
+            favStatus={favStatus}
+            deleteFav={deleteFav}
+          />
+        );
+  });
 
-  const newFunc = () => {
-    let arr2 = []
-    getEvents().forEach((data) => {
-        arr2.push(data)
-    })
-    return arr2;
-  }
-
-  const seattleRapCards = getEvents().map((rapEvent, index) => {
-    let newRapEvent = [];
-    rapEvent.forEach((show) => {
-        newRapEvent.push(show)
-    })
-    const seattleRap = newRapEvent.map(eachShow => {
-        console.log(eachShow._embedded.venues[0])
-        return (
-              <EventCards
-                id={eachShow.id}
-                img={eachShow.images[0]}
-                url={eachShow.url}
-                name={eachShow.name}
-                date={eachShow.dates.start.localDate}
-                key={eachShow.id}
-              />
-          )
-    })
-    return seattleRap;
-  })
-
-  return (
-    <div>
-        {seattleRapCards}
-    </div>
-  )
+  return <div>{allEventCards}</div>;
 };
-
