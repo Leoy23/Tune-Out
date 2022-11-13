@@ -1,13 +1,13 @@
 import React from "react";
-import EventCards from "../EventCards/EventCards";
+// import EventCards from "../EventCards/EventCards";
 import { NavBar } from "../NavBar/NavBar";
+import Favorites from "../Favorites/Favorites";
 
 export const FavoritesContainer = ({ favs, favStatus, deleteFav }) => {
   const handleError = favs.length ? (
     favs.map((event) => {
-      console.log(8, event)
       return (
-        <EventCards
+        <Favorites
           id={event.id}
           name={event.name}
           date={event.date}
