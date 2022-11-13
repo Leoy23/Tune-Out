@@ -62,7 +62,6 @@ EventCards.propTypes = {
   addToFavs: PropTypes.func.isRequired,
   date: PropTypes.string,
   deleteFav: PropTypes.func.isRequired,
-  favStatus: PropTypes.bool.isRequired,
   id: PropTypes.string,
   img: PropTypes.string,
   name: PropTypes.string,

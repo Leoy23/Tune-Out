@@ -3,7 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import { LandingPage } from "../LandingPage/LandingPage";
 // import { SingleEvent } from "../SingleEvent/SingleEvent";
 import { FavoritesContainer } from "../FavoritesContainer/FavoritesContainer";
-import { fetchAllEvents } from "../../apiCalls";
+import { fetchAllEvents } from "../../utils/apiCalls";
 import "./App.css";
 import HomePage from "../HomePage/HomePage";
 
