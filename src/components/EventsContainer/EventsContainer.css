@@ -1,9 +1,11 @@
 .events-container {
     display: flex;
     flex-direction: row;
-    font-family: 'Bevan', cursive;
-    height: 50vh;
-    flex-wrap: wrap;
     justify-content: center;
-    padding: 5rem;
+    font-family: 'Bevan', cursive;
+    height: 100%;
+    width: 30%;
+    flex-wrap: wrap;
+    margin-right: 30%;
+    padding: 2rem;
 }

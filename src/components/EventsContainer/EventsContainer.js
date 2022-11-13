@@ -27,6 +27,8 @@ export const EventsContainer = ({
         name={event.name}
         date={event.dates.start.localDate}
         venue={event._embedded.venues[0].name}
+        city={event._embedded.venues[0].city.name}
+        state={event._embedded.venues[0].state.stateCode}
         url={event.url}
         image={event.images[0].url}
         key={event.id}
@@ -37,7 +39,7 @@ export const EventsContainer = ({
     );
   });
 
-  return <div className="events-container">{allEventCards}</div>;
+  return <section className="events-container">{allEventCards}</section>;
 };
 
 EventsContainer.propTypes = {

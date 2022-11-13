@@ -48,9 +48,8 @@ const App = () => {
       name,
       date,
       url,
-      image,
     };
-
+    console.log(favEvent)
     const fav = () => {
         if (favs.some((fav) => fav.id !== favEvent.id)) {
           setFavStatus(false);

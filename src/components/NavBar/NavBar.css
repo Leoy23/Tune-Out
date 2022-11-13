@@ -13,7 +13,7 @@
   height: 24vh;
   width: 100%;
   margin-top: 0%;
-  padding: 9px;
+  padding: 1rem;
   text-align: center;
 }
 
@@ -23,7 +23,7 @@
   box-shadow: 1px 1px 1px .25px rgb(85, 144, 216);
   font-family: 'Bungee', cursive;
   font-size: 1.5rem;
-  padding: 0.35rem;
+  padding: 0.40rem;
   text-decoration: none;
   text-shadow: 1px 1px 5px #ae8b8b;
   transition: 0.5s;
@@ -33,14 +33,12 @@
     background-color: #BF4B21;
 }
 
-.active:hover {
-    background-color: #BF4B21;
-}
 
 .link-box {
   display: flex;
   justify-content: space-between;
   margin-top: -10%;
+  margin-right: 3%;
   padding: 1rem;
 }
 

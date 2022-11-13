@@ -1,92 +1,76 @@
 .display-cards {
-  align-items: flex-start;
+  align-items: center;
   background-color: #d9d384;
   box-sizing: border-box;
-  border: .6rem solid #BF4B21;
+  border: .6rem solid #bf4b21;
   border-radius: 2rem;
   color: #BF4B21;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
+  font-family: 'Barlow', sans-serif;
   font-size: .9rem;
   height: auto;
   justify-content: space-evenly; 
-  padding: .75rem;
-  width: 35rem;
+  margin-bottom: 1rem;
+  margin-left: 5rem;
+  padding: .5rem;
+  text-align: center;
+  width: 100vw;
 }
 
 img {
+    align-items: center;
+    border-radius: 2rem;
     width: 20rem;
-    height: 15rem;
+    height: 12rem;
     display: block;
     margin-left: auto;
     margin-right: auto;
     padding: 1rem;
 }
 
+.img-container {
+    background-color: #8FB6BF;
+    border-radius: 2rem;
+    margin: 0;
+}
+
+.wrapper {
+    background-color: #BF4B21;
+    border-radius: 2rem;
+    padding: .75rem;
+    margin: 0;
+}
+
 .update-favs {
     color:#A62F24;
-    font-size: 0.rem;
+    font-size: .5rem;
     font-weight: 550;
     padding-bottom: 0.25rem;
 }
 
-
-
 .fav-btn {
-  align-items: center;
-  background-color: #d9d384;
-  border: 2px solid #111;
-  border-radius: 8px;
-  box-sizing: border-box;
-  color: #111;
-  cursor: pointer;
-  display: flex;
-  font-family: 'Bevan', cursive;
-  font-size: 16px;
-  height: 48px;
-  justify-content: center;
-  line-height: 24px;
-  max-width: 100%;
-  padding: 0 25px;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
-
-.fav-btn:after {
-  background-color: #BF4B21;
-  border-radius: 8px;
-  content: "";
-  display: block;
-  height: 48px;
-  left: 0;
-  width: 100%;
-  position: absolute;
-  top: -2px;
-  transform: translate(8px, 8px);
-  transition: transform .2s ease-out;
-  z-index: -1;
-}
-
-.fav-btn:hover:after {
-  transform: translate(0, 0);
-}
-
-.fav-btn:active {
-  background-color: #BF4B21;
-  outline: 0;
-}
-
-.fav-btn:hover {
-  outline: 0;
-}
-
-@media (min-width: 768px) {
-  .fav-btn {
-    padding: 0 40px;
+    background-color:#8FB6BF;
+    border: .5px solid #ffe668;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px .25px rgb(85, 144, 216);
+    color: #D9D384;
+    font-family: 'Bungee', cursive;
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 0.35rem;
+    position: static;
+    text-decoration: none;
+    text-shadow: 1px 1px 5px #ae8b8b;
+    transition: 0.5s;
   }
-}
+  
+  .fav-btn:hover {
+      background-color: #BF4B21;
+  }
+  
+  .ticket-links {
+    color: #8FB6BF;
+    text-shadow: 2px 2px 2px 6px #D96E30;
+    padding: 1rem;
+  }
