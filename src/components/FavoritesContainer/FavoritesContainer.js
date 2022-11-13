@@ -3,7 +3,7 @@ import React from "react";
 import { NavBar } from "../NavBar/NavBar";
 import Favorites from "../Favorites/Favorites";
 
-export const FavoritesContainer = ({ favs, favStatus, deleteFav }) => {
+export const FavoritesContainer = ({ favs, favStatus, deleteFav, id }) => {
   const handleError = favs.length ? (
     favs.map((event) => {
       return (

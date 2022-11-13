@@ -15,9 +15,6 @@ const Favorites = ({
         <h3>{name}</h3>
         <p>{date}</p>
         <p>{url}</p>
-        {favStatus && (
-          <span className="update-favs">Added to your favorites!</span>
-        )}
         <button onClick={() => deleteFav(id)}>
           Un-Fave
         </button>

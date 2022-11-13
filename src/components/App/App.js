@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
 import { LandingPage } from "../LandingPage/LandingPage";
-import { SingleEvent } from "../SingleEvent/SingleEvent";
+// import { SingleEvent } from "../SingleEvent/SingleEvent";
 import { FavoritesContainer } from "../FavoritesContainer/FavoritesContainer";
 import { fetchAllEvents } from "../../apiCalls";
 import "./App.css";
@@ -9,7 +9,7 @@ import HomePage from "../HomePage/HomePage";
 
 const App = () => {
   const [seattleRapEvents, setSeattleRapEvents] = useState([]);
-  const [goToHome, setGoToHome] = useState("");
+  // const [goToHome, setGoToHome] = useState("");
   const [seattleRBEvents, setSeattleRBEvents] = useState([]);
   const [portlandRapEvents, setPortlandRapEvents] = useState([]);
   const [portlandRBEvents, setPortlandRBEvents] = useState([]);
@@ -52,21 +52,19 @@ const App = () => {
     };
 
     const fav = () => {
-      if (!favs.some((fav) => fav.id === favEvent.id)) {
+      let checkFavs = () => {
+        if (favs.some((fav) => fav.id !== favEvent.id)) {
+          setFavStatus(false);
+      } else {
         setFavStatus(true);
         setFavs([...favs, favEvent]);
-      } else {
-        setFavStatus(false);
-      }
-      // let arr = seattleRapEvents.map((event) => {
-      //   return favEvent.id === event.id ? setFavs([...favs, favEvent]) && setFavStatus(true)
-      //    : favEvent.id !== event.id && setFavStatus(false)
-      //   })
-      //   console.log(favs)
-      //   console.log(70, favStatus)
-      //   return arr;
+      }}
+      console.log(63, checkFavs())
+      return checkFavs();
     };
     fav();
+    console.log(62, fav());
+
   };
 
   const deleteFav = (id) => {
@@ -84,18 +82,14 @@ const App = () => {
           path="/home-page"
           render={() => (
             <HomePage
-              setGoToHome={setGoToHome}
-              favStatus={favStatus}
-              setSeattleRapEvents={setSeattleRapEvents}
-              setSeattleRBEvents={setSeattleRBEvents}
-              setPortlandRapEvents={setPortlandRapEvents}
-              setPortlandRBEvents={setPortlandRBEvents}
               seattleRapEvents={seattleRapEvents}
               seattleRBEvents={seattleRBEvents}
               portlandRapEvents={portlandRapEvents}
               portlandRBEvents={portlandRBEvents}
               addToFavs={addToFavs}
               deleteFav={deleteFav}
+              // setGoToHome={setGoToHome}
+              favStatus={favStatus}
             />
           )}
         ></Route>

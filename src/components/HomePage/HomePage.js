@@ -8,12 +8,9 @@ const HomePage = ({
   seattleRBEvents,
   portlandRBEvents,
   portlandRapEvents,
-  setSeattleRapEvents,
-  setSeattleRBEvents,
-  setPortlandRapEvents,
-  setPortlandRBEvents,
   addToFavs,
-  deleteFav
+  deleteFav,
+  favs
 }) => {
   console.log(seattleRapEvents);
 
@@ -22,10 +19,6 @@ const HomePage = ({
       <h1>Homepage</h1>
       <NavBar />
       <EventsContainer
-        setSeattleRapEvents={setSeattleRapEvents}
-        setSeattleRBEvents={setSeattleRBEvents}
-        setPortlandRapEvents={setPortlandRapEvents}
-        setPortlandRBEvents={setPortlandRBEvents}
         favStatus={favStatus}
         seattleRapEvents={seattleRapEvents}
         seattleRBEvents={seattleRBEvents}
@@ -33,6 +26,7 @@ const HomePage = ({
         portlandRBEvents={portlandRBEvents}
         addToFavs={addToFavs}
         deleteFav={deleteFav}
+        favs={favs}
       />
     </div>
   );
