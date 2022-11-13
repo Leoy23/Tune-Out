@@ -1,0 +1,18 @@
+.favorites-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-family: "Bevan", cursive;
+  height: 100%;
+  width: 100vw;
+  flex-wrap: wrap;
+  overflow-x: hidden;
+}
+
+.fav-msg-error {
+    color: #d9d384;
+    text-shadow: 2px 2px 2px black;
+}
+.fav-cards-space {
+    padding: 2rem;
+}

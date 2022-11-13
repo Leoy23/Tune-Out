@@ -1,8 +1,8 @@
 import PropTypes from "prop-types"
 import React from "react";
-// import EventCards from "../EventCards/EventCards";
 import { NavBar } from "../NavBar/NavBar";
 import { Favorites } from "../Favorites/Favorites";
+import "./FavoritesContainer.css"
 
 export const FavoritesContainer = ({ favs, deleteFav }) => {
   const handleError = favs.length ? (
@@ -13,7 +13,6 @@ export const FavoritesContainer = ({ favs, deleteFav }) => {
           name={event.name}
           date={event.date}
           url={event.url}
-          img={event.image}
           deleteFav={deleteFav}
           key={event.id}
         />
@@ -24,10 +23,12 @@ export const FavoritesContainer = ({ favs, deleteFav }) => {
   );
 
   return (
-    <>
+    <section className="favorites-container">
       <NavBar />
-      { handleError }
-    </>
+      <span className="fav-cards-space">
+        { handleError }
+      </span>
+    </section>
     );
 };
 

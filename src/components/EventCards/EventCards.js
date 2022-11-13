@@ -1,39 +1,51 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React from "react";
+import "./EventCards.css";
 
 const EventCards = ({
   id,
   date,
   name,
   venue,
+  city,
+  state,
   url,
   image,
   addToFavs,
   deleteFav,
   favStatus,
 }) => {
-
   const text = favStatus === true ? "Un-Fave" : "Fave";
   return (
-    <div>
-      <img src={image} alt="artist" />
+    <article className="display-cards">
+      <div className="wrapper">
+        <div className="img-container">
+          <img src={image} alt="artist" />
+        </div>
+      </div>
       <h3>{name}</h3>
-      <p>{date}</p>
-      <i><h4>{venue}</h4></i>
-      <p>{url}</p>
-      {favStatus && (
-        <span className="update-favs">Added to your favorites!</span>
-      )}
+      <p>Date: {date}</p>
+      <h4>
+        Venue: <i>{venue}</i>
+      </h4>
+      <h4>
+        Location: {city}, {state}
+      </h4>
+      <a className="ticket-links" href={`${url}`}>
+        <i>GET TICKETS HERE!</i>
+      </a>
+      {favStatus && <span className="update-favs">Added to your faves!</span>}
       <button
+        className="fav-btn"
         onClick={
-          favStatus === true 
+          favStatus === true
             ? () => deleteFav(id)
             : () => addToFavs(id, name, date, url)
         }
       >
         {text}
       </button>
-    </div>
+    </article>
   );
 };
 
@@ -46,7 +58,7 @@ EventCards.propTypes = {
   img: PropTypes.string,
   name: PropTypes.string,
   url: PropTypes.string,
-  venue: PropTypes.string
-}
+  venue: PropTypes.string,
+};
 
 export default EventCards;

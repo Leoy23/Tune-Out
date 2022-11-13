@@ -1,6 +1,7 @@
 import PropTypes from "prop-types"
 import React from "react";
 import EventCards from "../EventCards/EventCards";
+import "./EventsContainer.css"
 
 export const EventsContainer = ({
   seattleRapEvents,
@@ -26,8 +27,10 @@ export const EventsContainer = ({
         name={event.name}
         date={event.dates.start.localDate}
         venue={event._embedded.venues[0].name}
+        city={event._embedded.venues[0].city.name}
+        state={event._embedded.venues[0].state.stateCode}
         url={event.url}
-        image={event.images[0]}
+        image={event.images[0].url}
         key={event.id}
         addToFavs={addToFavs}
         favStatus={favStatus}
@@ -36,7 +39,7 @@ export const EventsContainer = ({
     );
   });
 
-  return <div>{allEventCards}</div>;
+  return <section className="events-container">{allEventCards}</section>;
 };
 
 EventsContainer.propTypes = {
