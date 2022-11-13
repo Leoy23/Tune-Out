@@ -28,7 +28,7 @@ const EventCards = ({
       setText("Fave")
     }
   }
-  // const text = favStatus === true ? "Un-Fave" : "Fave";
+
   return (
     <article className="display-cards">
       <div className="wrapper">

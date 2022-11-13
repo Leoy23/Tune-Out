@@ -13,8 +13,6 @@ const HomePage = ({
   addToFavs,
   deleteFav,
 }) => {
-  console.log(seattleRapEvents);
-
   return (
     <div className="home">
       <NavBar />

@@ -11,7 +11,7 @@ const cleanData = (data) => {
             country: data._embedded.venues[0].country.countryCode,
         },
         accessibleSeatingInfo: data._embedded.venues[0].accessibleSeatingDetails,
-        venueImage: data._embedded.venues[0].images[0].url 
+        favoriteStatus: false,
     }
 }
 
