@@ -1,25 +1,25 @@
-import React, { useState, useEffect } from 'react';
+// import React, { useState, useEffect } from 'react';
+import React from 'react';
+
 import { Link } from 'react-router-dom';
-import { fetchSingleEvent } from '../../apiCalls';
+// import { fetchSingleEvent } from '../../apiCalls';
 import './SingleEvent.css'
 
 
 export const SingleEvent = () => {
-    const [singleEvent, setSingleEvent] = useState([])
-    const [singleError, setSingleError] = useState("")
+    // const [singleEvent, setSingleEvent] = useState([])
+    // const [singleError, setSingleError] = useState("")
 
-    const getSingleData = (id, index) => {
-        console.log("Anything here?")
-      return fetchSingleEvent(`${id}`)
-        .then(data => {
-            setSingleEvent(data)
-        })
-        .catch(error => setSingleError(error))
-    }
-    console.log(getSingleData())
-    useEffect(() => {
-      getSingleData();  
-    }, [])
+    // useEffect(() => {
+    // const getSingleData = (id) => {
+    //     return fetchSingleEvent(`${id}`)
+    //         .then(data => {
+    //             setSingleEvent(data)
+    //         })
+    //         .catch(error => setSingleError(error))
+    //     }
+    //   getSingleData();  
+    // }, [])
 
   return (
     <section className='singe-event-container'>

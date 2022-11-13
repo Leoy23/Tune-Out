@@ -1,40 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import EventCards from "../EventCards/EventCards";
-import "./EventsContainer.css"
 
-export const EventsContainer = (seattleRapEvents) => {
+export const EventsContainer = ({
+  seattleRapEvents,
+  seattleRBEvents,
+  portlandRBEvents,
+  portlandRapEvents,
+  setSeattleRapEvents,
+  setSeattleRBEvents,
+  setPortlandRapEvents,
+  setPortlandRBEvents,
+  addToFavs,
+  favStatus,
+  deleteFav
+}) => {
+
+
   const getEvents = () => {
     let test = Object.keys(seattleRapEvents);
     let arr1 = [];
+    let idArr = []
     const testTwo = test.forEach((event) => {
       arr1.push(seattleRapEvents[event])
+      idArr.push(seattleRapEvents[event].id)
     });
-    const allEvents = arr1.map((rapEvent) => {
-      let eventsArr1 = []
-      rapEvent.forEach((show) => {
-        eventsArr1.push(show)
-      })
-      return eventsArr1;
-    })
-    const eventCards = allEvents.map(eachShow => {
-      return (
-            <EventCards
-              id={eachShow.id}
-              img={eachShow.images[0]}
-              url={eachShow.url}
-              name={eachShow.name}
-              date={eachShow.dates.start.localDate}
-              key={eachShow.id}
-            />
-        )
-    })
-    return eventCards;
+    console.log(23, arr1);
+    console.log(33, idArr)
+    return arr1;
   };
+  const allEventCards = getEvents().map((event) => {
+    return (
+          <EventCards
+            id={event.id}
+            name={event.name}
+            date={event.dates.start.localDate}
+            url={event.url}
+            img={event.images[0]}
+            key={event.id}
+            addToFavs={addToFavs}
+            favStatus={favStatus}
+            deleteFav={deleteFav}
+          />
+        );
+  });
 
-  return (
-    <div>
-        {getEvents()}
-    </div>
-  )
+  return <div>{allEventCards}</div>;
 };
-
