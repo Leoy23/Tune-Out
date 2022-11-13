@@ -52,18 +52,14 @@ const App = () => {
     };
 
     const fav = () => {
-      let checkFavs = () => {
         if (favs.some((fav) => fav.id !== favEvent.id)) {
           setFavStatus(false);
       } else {
         setFavStatus(true);
         setFavs([...favs, favEvent]);
-      }}
-      console.log(63, checkFavs())
-      return checkFavs();
+      }
     };
     fav();
-    console.log(62, fav());
 
   };
 

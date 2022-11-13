@@ -1,9 +1,10 @@
+import PropTypes from "prop-types"
 import React from "react";
 // import EventCards from "../EventCards/EventCards";
 import { NavBar } from "../NavBar/NavBar";
-import Favorites from "../Favorites/Favorites";
+import { Favorites } from "../Favorites/Favorites";
 
-export const FavoritesContainer = ({ favs, favStatus, deleteFav, id }) => {
+export const FavoritesContainer = ({ favs, deleteFav }) => {
   const handleError = favs.length ? (
     favs.map((event) => {
       return (
@@ -13,14 +14,13 @@ export const FavoritesContainer = ({ favs, favStatus, deleteFav, id }) => {
           date={event.date}
           url={event.url}
           img={event.image}
-          favStatus={favStatus}
           deleteFav={deleteFav}
           key={event.id}
         />
       );
     })
   ) : (
-    <h3 className="fav-msg-error"> Please choose a favorite. . . </h3>
+    <h3 className="fav-msg-error"> Add some favorites please. . . </h3>
   );
 
   return (
@@ -30,3 +30,8 @@ export const FavoritesContainer = ({ favs, favStatus, deleteFav, id }) => {
     </>
     );
 };
+
+FavoritesContainer.propTypes = {
+  deleteFav: PropTypes.func.isRequired,
+  favs: PropTypes.array.isRequired
+}

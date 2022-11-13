@@ -1,13 +1,13 @@
+import PropTypes from "prop-types"
 import React from 'react'
 
-const Favorites = ({
+export const Favorites = ({
     id,
     date,
     name,
     url,
     img,
     deleteFav,
-    favStatus,
   }) => {
     return (
       <div>
@@ -22,4 +22,13 @@ const Favorites = ({
     )
 }
 
-export default Favorites
+Favorites.propTypes = {
+  date: PropTypes.string,
+  deleteFav: PropTypes.func.isRequired,
+  id: PropTypes.string,
+  img: PropTypes.string,
+  name: PropTypes.string,
+  url: PropTypes.string
+}
+
+

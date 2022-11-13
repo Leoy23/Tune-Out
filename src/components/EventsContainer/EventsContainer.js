@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React from "react";
 import EventCards from "../EventCards/EventCards";
 
@@ -9,7 +10,6 @@ export const EventsContainer = ({
   addToFavs,
   favStatus,
   deleteFav,
-  favs,
 }) => {
   const getEvents = () => {
     let test = Object.keys(seattleRapEvents);
@@ -27,15 +27,25 @@ export const EventsContainer = ({
         date={event.dates.start.localDate}
         venue={event._embedded.venues[0].name}
         url={event.url}
-        img={event.images[0]}
+        image={event.images[0]}
         key={event.id}
         addToFavs={addToFavs}
         favStatus={favStatus}
         deleteFav={deleteFav}
-        favs={favs}
       />
     );
   });
 
   return <div>{allEventCards}</div>;
 };
+
+EventsContainer.propTypes = {
+  addToFavs: PropTypes.func.isRequired,
+  deleteFav: PropTypes.func.isRequired,
+  favStatus: PropTypes.bool.isRequired,
+  portlandRBEvents: PropTypes.array,
+  portlandRapEvents: PropTypes.array,
+  seattleRBEvents: PropTypes.array,
+  seattleRapEvents: PropTypes.array
+}
+

@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React from "react";
 
 const EventCards = ({
@@ -6,17 +7,16 @@ const EventCards = ({
   name,
   venue,
   url,
-  img,
+  image,
   addToFavs,
   deleteFav,
   favStatus,
-  favs
 }) => {
 
   const text = favStatus === true ? "Un-Fave" : "Fave";
   return (
     <div>
-      <img src={img} alt="artist" />
+      <img src={image} alt="artist" />
       <h3>{name}</h3>
       <p>{date}</p>
       <i><h4>{venue}</h4></i>
@@ -36,5 +36,17 @@ const EventCards = ({
     </div>
   );
 };
+
+EventCards.propTypes = {
+  addToFavs: PropTypes.func.isRequired,
+  date: PropTypes.string,
+  deleteFav: PropTypes.func.isRequired,
+  favStatus: PropTypes.bool.isRequired,
+  id: PropTypes.string,
+  img: PropTypes.string,
+  name: PropTypes.string,
+  url: PropTypes.string,
+  venue: PropTypes.string
+}
 
 export default EventCards;
