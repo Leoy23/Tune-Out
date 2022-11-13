@@ -7,7 +7,7 @@ export const NavBar = () => {
     <nav className='nav-bar'>
       <h1 className='nav-title'><span className='t-syle'>T</span>une<span className='o-style'> - O</span>ut</h1>
       <span className='link-box'>
-        <NavLink className="inactive" exact to="/home-page">Home</NavLink><NavLink className="inactive" to="/favorites">Favorites</NavLink>
+        <NavLink className="inactive text" exact to="/home-page">Home</NavLink><NavLink className="inactive text" to="/favorites">Favorites</NavLink>
       </span>
     </nav>
   );
