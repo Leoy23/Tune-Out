@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import PropTypes from "prop-types"
+import React from "react";
 import EventCards from "../EventCards/EventCards";
 
 export const EventsContainer = ({
@@ -7,43 +7,45 @@ export const EventsContainer = ({
   seattleRBEvents,
   portlandRBEvents,
   portlandRapEvents,
-  setSeattleRapEvents,
-  setSeattleRBEvents,
-  setPortlandRapEvents,
-  setPortlandRBEvents,
   addToFavs,
   favStatus,
-  deleteFav
+  deleteFav,
 }) => {
-
-
   const getEvents = () => {
     let test = Object.keys(seattleRapEvents);
     let arr1 = [];
-    let idArr = []
     const testTwo = test.forEach((event) => {
-      arr1.push(seattleRapEvents[event])
-      idArr.push(seattleRapEvents[event].id)
+      arr1.push(seattleRapEvents[event]);
     });
-    console.log(23, arr1);
-    console.log(33, idArr)
     return arr1;
   };
   const allEventCards = getEvents().map((event) => {
     return (
-          <EventCards
-            id={event.id}
-            name={event.name}
-            date={event.dates.start.localDate}
-            url={event.url}
-            img={event.images[0]}
-            key={event.id}
-            addToFavs={addToFavs}
-            favStatus={favStatus}
-            deleteFav={deleteFav}
-          />
-        );
+      <EventCards
+        id={event.id}
+        name={event.name}
+        date={event.dates.start.localDate}
+        venue={event._embedded.venues[0].name}
+        url={event.url}
+        image={event.images[0]}
+        key={event.id}
+        addToFavs={addToFavs}
+        favStatus={favStatus}
+        deleteFav={deleteFav}
+      />
+    );
   });
 
   return <div>{allEventCards}</div>;
 };
+
+EventsContainer.propTypes = {
+  addToFavs: PropTypes.func.isRequired,
+  deleteFav: PropTypes.func.isRequired,
+  favStatus: PropTypes.bool.isRequired,
+  portlandRBEvents: PropTypes.array,
+  portlandRapEvents: PropTypes.array,
+  seattleRBEvents: PropTypes.array,
+  seattleRapEvents: PropTypes.array
+}
+

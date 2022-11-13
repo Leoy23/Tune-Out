@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React from "react";
 import { EventsContainer } from "../EventsContainer/EventsContainer";
 import { NavBar } from "../NavBar/NavBar";
@@ -8,12 +9,8 @@ const HomePage = ({
   seattleRBEvents,
   portlandRBEvents,
   portlandRapEvents,
-  setSeattleRapEvents,
-  setSeattleRBEvents,
-  setPortlandRapEvents,
-  setPortlandRBEvents,
   addToFavs,
-  deleteFav
+  deleteFav,
 }) => {
   console.log(seattleRapEvents);
 
@@ -22,10 +19,6 @@ const HomePage = ({
       <h1>Homepage</h1>
       <NavBar />
       <EventsContainer
-        setSeattleRapEvents={setSeattleRapEvents}
-        setSeattleRBEvents={setSeattleRBEvents}
-        setPortlandRapEvents={setPortlandRapEvents}
-        setPortlandRBEvents={setPortlandRBEvents}
         favStatus={favStatus}
         seattleRapEvents={seattleRapEvents}
         seattleRBEvents={seattleRBEvents}
@@ -37,5 +30,15 @@ const HomePage = ({
     </div>
   );
 };
+
+HomePage.propTypes = {
+  addToFavs: PropTypes.func.isRequired,
+  deleteFav: PropTypes.func.isRequired,
+  favStatus: PropTypes.bool.isRequired,
+  portlandRBEvents: PropTypes.array,
+  portlandRapEvents: PropTypes.array,
+  seattleRBEvents: PropTypes.array,
+  seattleRapEvents: PropTypes.array
+}
 
 export default HomePage;
