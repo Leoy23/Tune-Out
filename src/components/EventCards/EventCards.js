@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import React from "react";
+import React, { useState } from "react";
 import "./EventCards.css";
 
 const EventCards = ({
@@ -13,9 +13,22 @@ const EventCards = ({
   image,
   addToFavs,
   deleteFav,
-  favStatus,
 }) => {
-  const text = favStatus === true ? "Un-Fave" : "Fave";
+  const [favStatus, setFavStatus] = useState(false)
+  const [text, setText] = useState("Fave")
+
+  const handleClick = () => {
+    if (!favStatus) {
+      setFavStatus(true)
+      addToFavs(id, name, date, url)
+      setText("Un-Fave")
+    } else {
+      setFavStatus(false)
+      deleteFav(id)
+      setText("Fave")
+    }
+  }
+  // const text = favStatus === true ? "Un-Fave" : "Fave";
   return (
     <article className="display-cards">
       <div className="wrapper">
@@ -37,11 +50,7 @@ const EventCards = ({
       {favStatus && <span className="update-favs">Added to your faves!</span>}
       <button
         className="fav-btn"
-        onClick={
-          favStatus === true
-            ? () => deleteFav(id)
-            : () => addToFavs(id, name, date, url)
-        }
+       onClick={handleClick}
       >
         {text}
       </button>
