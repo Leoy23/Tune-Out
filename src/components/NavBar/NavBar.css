@@ -1,0 +1,37 @@
+.nav-bar {
+  background: repeating-radial-gradient(
+    circle,
+    #d96e30,
+    #d96e30 10px,
+    #bf4b21 10px,
+    #bf4b21 20px
+  );
+  display: flex;
+  flex-direction: column;
+  height: 24vh;
+  width: 100%;
+  margin-top: 0%;
+  text-align: center;
+  text-shadow: 2px 2px 8px #a62f24;
+}
+
+.inactive {
+  color: #d9d384;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+.link-box {
+  display: flex;
+  justify-content: space-around;
+  margin-top: -10%;
+  padding: 1rem;
+}
+
+.nav-title {
+  color: #d9d384;
+  font-size: 6rem;
+  margin-top: -2%;
+}

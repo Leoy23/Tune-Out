@@ -16,7 +16,6 @@ const HomePage = ({
 
   return (
     <div className="home">
-      <h1>Homepage</h1>
       <NavBar />
       <EventsContainer
         favStatus={favStatus}
