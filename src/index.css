@@ -4,3 +4,11 @@ html, body {
   font-family: 'Bevan', cursive;
   margin: 0%;
 }
+
+h1 {
+  color: #D9D384;
+  font-family: 'Bevan', cursive;
+  font-size: 6rem;
+  margin-top: -2%;
+  text-shadow: 5px 5px 10px #fc3f2e;
+}

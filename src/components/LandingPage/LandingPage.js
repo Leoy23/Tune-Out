@@ -5,7 +5,9 @@ import './LandingPage.css'
 export const LandingPage = () => {
   return (
     <div className='landing-page'>
-      <h1>Tune Out</h1>
+      <div className='tune-out-wrapper'> 
+      <h1 className='tune-out-title'>Tune Out</h1>
+      </div>
       <div className='explore-btn-section'>
       <Link to="/home-page">
         <button className='explore-btn'>Explore Events</button>
