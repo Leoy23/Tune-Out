@@ -1,6 +1,6 @@
-import PropTypes from "prop-types";
-import React, { useState } from "react";
-import "./EventCards.css";
+import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+import './EventCards.css';
 
 const EventCards = ({
   id,
@@ -14,26 +14,26 @@ const EventCards = ({
   addToFavs,
   deleteFav,
 }) => {
-  const [favStatus, setFavStatus] = useState(false)
-  const [text, setText] = useState("Fave")
+  const [favStatus, setFavStatus] = useState(false);
+  const [text, setText] = useState('Fave');
 
   const handleClick = () => {
     if (!favStatus) {
-      setFavStatus(true)
-      addToFavs(id, name, date, url)
-      setText("Un-Fave")
+      setFavStatus(true);
+      addToFavs(id, name, date, url);
+      setText('Un-Fave');
     } else {
-      setFavStatus(false)
-      deleteFav(id)
-      setText("Fave")
+      setFavStatus(false);
+      deleteFav(id);
+      setText('Fave');
     }
-  }
+  };
 
   return (
-    <article className="display-cards">
-      <div className="wrapper">
-        <div className="img-container">
-          <img className="artist-pic" src={image} alt="artist" />
+    <article className='display-cards'>
+      <div className='wrapper'>
+        <div className='img-container'>
+          <img className='artist-pic' src={image} alt='artist' />
         </div>
       </div>
       <h3>{name}</h3>
@@ -44,14 +44,11 @@ const EventCards = ({
       <h4>
         Location: {city}, {state}
       </h4>
-      <a className="ticket-links" href={`${url}`}>
+      <a className='ticket-links' href={`${url}`}>
         <i>GET TICKETS HERE!</i>
       </a>
-      {favStatus && <span className="update-favs">Added to your faves!</span>}
-      <button
-        className="fav-btn"
-       onClick={handleClick}
-      >
+      {favStatus && <span className='update-favs'>Added to your faves!</span>}
+      <button className='fav-btn' onClick={handleClick}>
         {text}
       </button>
     </article>

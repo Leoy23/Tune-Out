@@ -1,8 +1,8 @@
-import PropTypes from "prop-types"
-import React from "react";
-import { NavBar } from "../NavBar/NavBar";
-import { Favorites } from "../Favorites/Favorites";
-import "./FavoritesContainer.css"
+import PropTypes from 'prop-types';
+import React from 'react';
+import { NavBar } from '../NavBar/NavBar';
+import { Favorites } from '../Favorites/Favorites';
+import './FavoritesContainer.css';
 
 export const FavoritesContainer = ({ favs, deleteFav }) => {
   const handleError = favs.length ? (
@@ -19,20 +19,18 @@ export const FavoritesContainer = ({ favs, deleteFav }) => {
       );
     })
   ) : (
-    <h3 className="fav-msg-error"> Add some favorites please. . . </h3>
+    <h3 className='fav-msg-error'> Add some favorites please. . . </h3>
   );
 
   return (
-    <section className="favorites-container">
+    <section className='favorites-container'>
       <NavBar />
-      <span className="fav-cards-space">
-        { handleError }
-      </span>
+      <span className='fav-cards-space'>{handleError}</span>
     </section>
-    );
+  );
 };
 
 FavoritesContainer.propTypes = {
   deleteFav: PropTypes.func.isRequired,
-  favs: PropTypes.array.isRequired
-}
+  favs: PropTypes.array.isRequired,
+};

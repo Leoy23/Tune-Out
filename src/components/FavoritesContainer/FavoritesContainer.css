@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  font-family: "Bevan", cursive;
+  font-family: 'Bevan', cursive;
   height: 100%;
   width: 100vw;
   flex-wrap: wrap;
@@ -10,16 +10,16 @@
 }
 
 .fav-msg-error {
-    color: #d9d384;
-    text-shadow: 2px 2px 2px black;
+  color: #d9d384;
+  text-shadow: 2px 2px 2px black;
 }
 .fav-cards-space {
-    padding: 2rem;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-evenly;
+  padding: 2rem;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
 }

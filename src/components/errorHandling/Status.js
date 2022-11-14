@@ -14,6 +14,3 @@ const Status = ({ code, children }) => {
 
   export default Status;
 
-  // line 4 , declaring FC (status) has a code and children
-  // returning the route to render static content == matching based on the status
-  // return the children which is the page 
