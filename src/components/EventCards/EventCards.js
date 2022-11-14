@@ -33,7 +33,7 @@ const EventCards = ({
     <article className="display-cards">
       <div className="wrapper">
         <div className="img-container">
-          <img src={image} alt="artist" />
+          <img className="artist-pic" src={image} alt="artist" />
         </div>
       </div>
       <h3>{name}</h3>

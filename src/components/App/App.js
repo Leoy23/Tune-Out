@@ -4,6 +4,8 @@ import { LandingPage } from "../LandingPage/LandingPage";
 // import { SingleEvent } from "../SingleEvent/SingleEvent";
 import { FavoritesContainer } from "../FavoritesContainer/FavoritesContainer";
 import { fetchAllEvents } from "../../utils/apiCalls";
+import Status404 from "../errorHandling/Status404";
+import InternalServerError from '../errorHandling/InternalServerError';
 import "./App.css";
 import HomePage from "../HomePage/HomePage";
 
@@ -63,34 +65,36 @@ const App = () => {
     <main className="home-page-container">
       {error ? <h2 className="error-msg">Error</h2> : null}
       <Switch>
-        <Route exact path="/" render={() => <LandingPage />}></Route>
         <Route
-          path="/home-page"
+          exact path="/home-page"
           render={() => (
             <HomePage
-              seattleRapEvents={seattleRapEvents}
-              seattleRBEvents={seattleRBEvents}
-              portlandRapEvents={portlandRapEvents}
-              portlandRBEvents={portlandRBEvents}
-              addToFavs={addToFavs}
-              deleteFav={deleteFav}
-              // setGoToHome={setGoToHome}
-              // favStatus={favStatus}
+            seattleRapEvents={seattleRapEvents}
+            seattleRBEvents={seattleRBEvents}
+            portlandRapEvents={portlandRapEvents}
+            portlandRBEvents={portlandRBEvents}
+            addToFavs={addToFavs}
+            deleteFav={deleteFav}
+            // setGoToHome={setGoToHome}
+            // favStatus={favStatus}
             />
-          )}
+            )}
         ></Route>
         {/* <Route exact to="/:id" render={({ match }) => {
           return <SingleEvent 
           id={match.params.id}
           />
         }}>
-        </Route> */}
+      </Route> */}
         <Route
-          to="/favorites"
+          exact path="/favorites"
           render={() => (
             <FavoritesContainer favs={favs} deleteFav={deleteFav} />
-          )}
+            )}
         ></Route>
+        <Route exact path="/" render={() => <LandingPage />}></Route>
+        <Route component={Status404} />
+        <Route component={InternalServerError} />
       </Switch>
     </main>
   );
