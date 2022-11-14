@@ -1,6 +1,6 @@
 .favorites-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: flex-start;
   font-family: "Bevan", cursive;
   height: 100%;
@@ -15,4 +15,11 @@
 }
 .fav-cards-space {
     padding: 2rem;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
 }
