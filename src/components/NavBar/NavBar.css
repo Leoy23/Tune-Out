@@ -17,7 +17,8 @@
   text-align: center;
 }
 
-.inactive {
+.home-link,
+.favorites-link {
   border: .5px solid #ffe668;
   border-radius: 5px;
   box-shadow: 1px 1px 1px .25px rgb(85, 144, 216);
@@ -29,7 +30,7 @@
   transition: 0.5s;
 }
 
-.inactive:hover {
+.home-link:hover {
     background-color: #BF4B21;
 }
 

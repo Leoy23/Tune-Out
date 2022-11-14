@@ -20,7 +20,6 @@ const Status404 = () => {
           <div className="st404title-4">
           <Link to="/" className='link-404-con'>
             <h5>Let's take you back home . . .</h5>
-           {/* <img className="stat-4040-logo" src={logo} alt='Not Found logo'/> */}
           </Link>
           </div>
         </div>
