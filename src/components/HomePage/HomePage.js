@@ -8,8 +8,6 @@ const HomePage = ({
   favStatus,
   seattleRapEvents,
   seattleRBEvents,
-  portlandRBEvents,
-  portlandRapEvents,
   addToFavs,
   deleteFav,
 }) => {
@@ -20,8 +18,6 @@ const HomePage = ({
         favStatus={favStatus}
         seattleRapEvents={seattleRapEvents}
         seattleRBEvents={seattleRBEvents}
-        portlandRapEvents={portlandRapEvents}
-        portlandRBEvents={portlandRBEvents}
         addToFavs={addToFavs}
         deleteFav={deleteFav}
       />

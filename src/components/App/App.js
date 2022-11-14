@@ -11,34 +11,26 @@ import HomePage from "../HomePage/HomePage";
 const App = () => {
   const [seattleRapEvents, setSeattleRapEvents] = useState([]);
   const [seattleRBEvents, setSeattleRBEvents] = useState([]);
-  const [portlandRapEvents, setPortlandRapEvents] = useState([]);
-  const [portlandRBEvents, setPortlandRBEvents] = useState([]);
   const [error, setError] = useState("");
   const [favs, setFavs] = useState([]);
 
   useEffect(() => {
-    const getPromises = () => {
-      let seattleRapEvents = fetchAllEvents("KnvZfZ7vAv1", 385);
-      let seattleRBEvents = fetchAllEvents("KnvZfZ7vAee", 385);
-      let portlandRapEvents = fetchAllEvents("KnvZfZ7vAv1", 362);
-      let portlandRBEvents = fetchAllEvents("KnvZfZ7vAee", 362);
+    const getAllEvents = () => {
+      let seattleRapEvents = fetchAllEvents("KnvZfZ7vAv1");
+      let seattleRBEvents = fetchAllEvents("KnvZfZ7vAee");
       Promise.all([
         seattleRBEvents,
         seattleRapEvents,
-        portlandRBEvents,
-        portlandRapEvents,
       ])
         .then((data) => {
           setSeattleRBEvents(data[0]._embedded.events);
           setSeattleRapEvents(data[1]._embedded.events);
-          setPortlandRBEvents(data[2]._embedded.events);
-          setPortlandRapEvents(data[3]._embedded.events);
         })
         .catch(() => {
           setError(error);
         });
     };
-    getPromises();
+    getAllEvents();
   }, []);
 
   const addToFavs = (id, name, date, url) => {
@@ -69,8 +61,6 @@ const App = () => {
             <HomePage
               seattleRapEvents={seattleRapEvents}
               seattleRBEvents={seattleRBEvents}
-              portlandRapEvents={portlandRapEvents}
-              portlandRBEvents={portlandRBEvents}
               addToFavs={addToFavs}
               deleteFav={deleteFav}
             />
