@@ -37,9 +37,11 @@
 
 .link-box {
   display: flex;
+  align-items: flex-end;
   justify-content: space-between;
   margin-top: -10%;
   margin-right: 3%;
+  height: 100%;
   padding: 1rem;
 }
 
