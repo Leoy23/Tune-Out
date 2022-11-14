@@ -11,6 +11,8 @@ describe('Landing display', () => {
   })
 
   it('should direct users to home page on click', () => {
+    cy.visit('http://localhost:3000/')
+    cy.intercept("GET", 'https://app.ticketmaster.com/discovery/v2/', { fixture: 'sampleData.json' })
     cy.get('.explore-btn').click()
     .get('.home')
     .should('be.visible')
@@ -19,7 +21,7 @@ describe('Landing display', () => {
 
 describe('Home Display', () => {
   beforeEach(() => { 
-    cy.intercept('GET', 'https://app.ticketmaster.com/discovery/v2/events.json?classificationId=KnvZfZ7vAv1&dmaId=385', { fixture: 'rapData.json' })
+    cy.intercept("GET", 'https://app.ticketmaster.com/discovery/v2/', { fixture: 'sampleData.json' })
     cy.visit('http://localhost:3000/home-page')
   })
 

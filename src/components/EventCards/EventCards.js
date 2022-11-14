@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import "./EventCards.css";
 
 const EventCards = ({
@@ -55,9 +54,6 @@ const EventCards = ({
       >
         {text}
       </button>
-      <Link to={`/event/${id}`}>
-        <button className="view-details-button">VIEW DETAILS</button>
-      </Link>
     </article>
   );
 };

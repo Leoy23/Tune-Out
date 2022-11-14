@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
 import { LandingPage } from "../LandingPage/LandingPage";
-// import { SingleEvent } from "../SingleEvent/SingleEvent";
 import { FavoritesContainer } from "../FavoritesContainer/FavoritesContainer";
 import { fetchAllEvents } from "../../utils/apiCalls";
 import Status404 from "../errorHandling/Status404";
-import InternalServerError from '../errorHandling/InternalServerError';
+import InternalServerError from "../errorHandling/InternalServerError";
 import "./App.css";
 import HomePage from "../HomePage/HomePage";
 
 const App = () => {
   const [seattleRapEvents, setSeattleRapEvents] = useState([]);
-  // const [goToHome, setGoToHome] = useState("");
   const [seattleRBEvents, setSeattleRBEvents] = useState([]);
   const [portlandRapEvents, setPortlandRapEvents] = useState([]);
   const [portlandRBEvents, setPortlandRBEvents] = useState([]);
@@ -52,8 +50,7 @@ const App = () => {
     };
 
     const filtered = favs.filter((f) => f.id !== favEvent.id);
-    favs.length ? setFavs([...filtered, favEvent]) : setFavs([favEvent])
-
+    favs.length ? setFavs([...filtered, favEvent]) : setFavs([favEvent]);
   };
 
   const deleteFav = (id) => {
@@ -66,31 +63,25 @@ const App = () => {
       {error ? <h2 className="error-msg">Error</h2> : null}
       <Switch>
         <Route
-          exact path="/home-page"
+          exact
+          path="/home-page"
           render={() => (
             <HomePage
-            seattleRapEvents={seattleRapEvents}
-            seattleRBEvents={seattleRBEvents}
-            portlandRapEvents={portlandRapEvents}
-            portlandRBEvents={portlandRBEvents}
-            addToFavs={addToFavs}
-            deleteFav={deleteFav}
-            // setGoToHome={setGoToHome}
-            // favStatus={favStatus}
+              seattleRapEvents={seattleRapEvents}
+              seattleRBEvents={seattleRBEvents}
+              portlandRapEvents={portlandRapEvents}
+              portlandRBEvents={portlandRBEvents}
+              addToFavs={addToFavs}
+              deleteFav={deleteFav}
             />
-            )}
+          )}
         ></Route>
-        {/* <Route exact to="/:id" render={({ match }) => {
-          return <SingleEvent 
-          id={match.params.id}
-          />
-        }}>
-      </Route> */}
         <Route
-          exact path="/favorites"
+          exact
+          path="/favorites"
           render={() => (
             <FavoritesContainer favs={favs} deleteFav={deleteFav} />
-            )}
+          )}
         ></Route>
         <Route exact path="/" render={() => <LandingPage />}></Route>
         <Route component={Status404} />

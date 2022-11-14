@@ -2,8 +2,7 @@
     margin: 0%;
     text-decoration: none;
     }
-    
-    
+
     .error-wrapper{
         display: flex;
         flex-direction: column;
@@ -13,10 +12,7 @@
         width: 100%;
         padding: 4rem;
     }
-    
-
-
-    
+   
     .st404-title,
     .st404title-2,
     .st404title-3,
@@ -31,7 +27,6 @@
     .st404title-4{
       width:100px;
     }
-
 
     .error-wrapper h2 {
         display: flex;
