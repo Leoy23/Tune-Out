@@ -1,5 +1,4 @@
- {"sampleData": [
-  {
+{
   "image": "https://s1.ticketm.net/dam/a/08f/a4fb5112-7503-414…2ab-0ecc8c76d08f_1158801_RETINA_PORTRAIT_16_9.jpg",
   "name": "Snoop Doggs Holidaze of Blaze with T-Pain, Warren G, & Ying Yang Twin",
   "date": "2022-12-16",
@@ -7,16 +6,5 @@
   "city": "Tacoma",
   "state": "WA",
   "url": "https://www.ticketmaster.com/snoop-doggs-holidaze-of-blaze-with-tacoma-washington-12-16-2022/event/0F005D618DC61123"
-},
-{
-  "image": "https://s1.ticketm.net/dam/a/510/773583b4-81a1-45b…1ab81c510_1711431_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-  "name": "Yung Gravy & bbno$: Baby Gravy, The Tour",
-  "date": "2023-1-16",
-  "venue": "Tacoma Dome",
-  "city": "Tacoma",
-  "state": "WA",
-  "url": "https://www.ticketmaster.com/yung-gravy-bbno-baby-gravy-the-seattle-washington-12-14-2022/event/0F005CCA95CB6958" 
-}
- ]
 }
   

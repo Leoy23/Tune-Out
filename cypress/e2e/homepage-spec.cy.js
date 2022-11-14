@@ -1,8 +1,5 @@
 describe('Landing display', () => {
   beforeEach(() => {
-    cy.intercept('GET', 'https://app.ticketmaster.com/discovery/v2/events', {
-      fixture: "sampleData",
-    }).as("rapData");
     cy.visit('http://localhost:3000/')
   })
 
@@ -21,12 +18,11 @@ describe('Landing display', () => {
 })
 
 describe('Home Display', () => {
-  beforeEach(() => {
-    cy.intercept('GET', 'https://app.ticketmaster.com/discovery/v2/events', {
-        fixture: "sampleData",
-      }).as("rapData");
-      cy.visit('http://localhost:3000/home-page')
+  beforeEach(() => { 
+    cy.intercept('GET', 'https://app.ticketmaster.com/discovery/v2/events.json?classificationId=KnvZfZ7vAv1&dmaId=385', { fixture: 'rapData.json' })
+    cy.visit('http://localhost:3000/home-page')
   })
+
   it('should display a navbar with a title', () => {
     cy.get('.nav-title').should("contain", "Tune - Out")
   })
@@ -37,8 +33,8 @@ describe('Home Display', () => {
   })
 
   it('should display an event card for an upcoming event', () => {
-    cy.get('.home')
-    cy.get('.artist-pic').should('exist')
+    cy.get('[class*=display-cards]')
+    cy.get('.display-cards').should('have.class', 'artist-pic')
     cy.get(':nth-child(1) > h3').should('exist').should('contain', "Snoop Doggs Holidaze of Blaze with T-Pain, Warren G, & Ying Yang Twin")
     cy.get(':nth-child(1) > p').should('exist').should("contain", "Date: 2022-12-16")
     cy.get('.events-container > :nth-child(1) > :nth-child(4)').should('exist').should('contain', 'Venue: Tacoma Dome')
@@ -47,13 +43,13 @@ describe('Home Display', () => {
     cy.get(':nth-child(1) > .fav-btn').should('exist').should('contain', 'Fave')
   })
 
-  // it('should display an error message to the user if the GET request fails', () => {
-  //   cy.intercept('GET', 'https://app.ticketmaster.com/discovery/v2/events', {
-  //     statusCode: 404,
-  //     ok: false
-  //   });
-  //   cy.visit('http://localhost:3000/home-page');
-  //   cy.get('.error-msg').should('exist').and('contain', "Uh oh, that's a 404! Try again later");
-  // });
+  it('should add event to favorites and be displayed on the favorites page', () => {
+    cy.get('display-cards')
+    cy.get('.fav-btn').click();
+    cy.get('.update-favs').should('exist').contains('Added to your faves!');
+    cy.get('[href="/favorites"]').click();
+    cy.url().should('eq', 'http://localhost:3000/favorites');
+    cy.get('.fav-cards').should('exist').contains('Snoop Doggs Holidaze of Blaze with T-Pain, Warren G, & Ying Yang Twin');
+  });
 })
 
