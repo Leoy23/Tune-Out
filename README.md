@@ -3,7 +3,7 @@
 <!-- HEADER -->
 <h1 align="center">Tune - Out</h1>
 
-<h3 align="center">For devs in need of dad jokes.</h3>
+<h3 align="center">For Hip-Hop and R&B Lovers!</h3>
 
 <h4 align="center"><a href="https://tune-out.vercel.app"><strong>Deploy Link</strong></a> | <a href="https://github.com/Leoy23/Tune-Out"><strong>Explore The Docs »</strong></a></h4>
 
@@ -32,7 +32,7 @@
 </details>
 
 ## About The Project
-Tune - out was created for all the Hip-Hop and R&B lovers/enthusiasts in the Seattle area to find and see their favorite artists performing at venues close to them.
+Tune - Out was created for all the Hip-Hop and R&B lovers/enthusiasts in the Seattle area to find and see their favorite artists performing at venues close to them.
 <br>
 
 
@@ -92,7 +92,7 @@ This project was assigned during the third module of Turing's Front-End Engineer
 Overall, I felt the ease that comes with React when creating modular and reusable components to achieve a beautifully designed and detail-focused app. Very happy to see this final product! This all happened with the help of my amazing support system who continually challenges me and encourages me to take on technical feats of any kind.
 <p>
 <b>Challenges:</b><br>
-I felt challenged every step of the way during this project. From numerous `429` errors to Cypress requiring every ounce of my strength, I felt stimulated by the learning that happens under stress and pressure. All in all, this is a project I plan on re-visiting and refactoring to include more accessible features and to provide users with an easy and enjoyable user experience. 
+I felt challenged every step of the way during this project. From numerous 429 errors to Cypress requiring every ounce of my strength, I felt stimulated by the learning that happens under stress and pressure. All in all, this is a project I plan on re-visiting and refactoring to include more accessible features and to provide users with an easy and enjoyable user experience. 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
