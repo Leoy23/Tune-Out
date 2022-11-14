@@ -1,6 +1,3 @@
-
-## An app for all your Hip-Hop and R&B events in the greater Seattle area
-
 <a name="readme-top"></a>
 
 <!-- HEADER -->
@@ -37,18 +34,6 @@
 ## About The Project
 Tune - out was created for all the Hip-Hop and R&B lovers/enthusiasts in the Seattle area to find and see their favorite artists performing at venues close to them.
 <br>
-
-![Screenshot 2022-11-13 at 11 41 14 PM]()
-
-![Screenshot 2022-11-13 at 11 41 43 PM]()
-
-![Screenshot 2022-11-13 at 11 42 26 PM](https://user-images.githubusercontent.com/106054421/201592640-d5e21fcc-4d07-4f75-86a3-682702be0f51.png)
-
-![Screenshot 2022-11-13 at 11 39 55 PM]()
-
-
-
-
 
 
 <h3 align="center">Landing Page Display</h3>
