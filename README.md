@@ -83,7 +83,7 @@ This project was assigned during the third module of Turing's Front-End Engineer
 
 ## Features
 
-- Created with React, this code base utilizes React hooks and Router to not only create a multi-page user experience from a single-page application, but also handle bad user-inputed URLs
+- Created with React, this code base utilizes Router to not only create a multi-page user experience from a single-page application, but also handle bad user-inputed URLs
 - Implements REST API consumption with Ticketmaster's Discovery API and acceptance testing with a robust Cypress testing suite featuring error-handling
 
 
