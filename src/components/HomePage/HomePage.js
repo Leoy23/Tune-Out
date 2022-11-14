@@ -1,8 +1,8 @@
-import PropTypes from "prop-types"
-import React from "react";
-import { EventsContainer } from "../EventsContainer/EventsContainer";
-import { NavBar } from "../NavBar/NavBar";
-import "./HomePage.css"
+import PropTypes from 'prop-types';
+import React from 'react';
+import { EventsContainer } from '../EventsContainer/EventsContainer';
+import { NavBar } from '../NavBar/NavBar';
+import './HomePage.css';
 
 const HomePage = ({
   favStatus,
@@ -12,7 +12,7 @@ const HomePage = ({
   deleteFav,
 }) => {
   return (
-    <div className="home">
+    <div className='home'>
       <NavBar />
       <EventsContainer
         favStatus={favStatus}
@@ -31,7 +31,7 @@ HomePage.propTypes = {
   portlandRBEvents: PropTypes.array,
   portlandRapEvents: PropTypes.array,
   seattleRBEvents: PropTypes.array,
-  seattleRapEvents: PropTypes.array
-}
+  seattleRapEvents: PropTypes.array,
+};
 
 export default HomePage;

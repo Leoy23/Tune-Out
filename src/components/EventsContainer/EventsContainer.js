@@ -1,7 +1,7 @@
-import PropTypes from "prop-types"
-import React from "react";
-import EventCards from "../EventCards/EventCards";
-import "./EventsContainer.css"
+import PropTypes from 'prop-types';
+import React from 'react';
+import EventCards from '../EventCards/EventCards';
+import './EventsContainer.css';
 
 export const EventsContainer = ({
   seattleRapEvents,
@@ -10,7 +10,6 @@ export const EventsContainer = ({
   favStatus,
   deleteFav,
 }) => {
-
   const getRapEvents = () => {
     let test = Object.keys(seattleRapEvents);
     let arr1 = [];
@@ -66,11 +65,11 @@ export const EventsContainer = ({
   });
 
   return (
-  <section className="events-container">
-    {allRapEvents}
-    {allRBEvents}
+    <section className='events-container'>
+      {allRapEvents}
+      {allRBEvents}
     </section>
-    )
+  );
 };
 
 EventsContainer.propTypes = {
@@ -79,6 +78,5 @@ EventsContainer.propTypes = {
   portlandRBEvents: PropTypes.array,
   portlandRapEvents: PropTypes.array,
   seattleRBEvents: PropTypes.array,
-  seattleRapEvents: PropTypes.array
-}
-
+  seattleRapEvents: PropTypes.array,
+};

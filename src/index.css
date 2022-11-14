@@ -1,6 +1,15 @@
-html, body {
-  background-color: #8FB6BF;
+html,
+body {
+  background-color: #8fb6bf;
   flex-direction: row;
   font-family: 'Bevan', cursive;
   margin: 0%;
+}
+
+h1 {
+  color: #d9d384;
+  font-family: 'Bevan', cursive;
+  font-size: 6rem;
+  margin-top: -2%;
+  text-shadow: 5px 5px 10px #fc3f2e;
 }

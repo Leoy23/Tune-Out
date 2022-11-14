@@ -1,10 +1,10 @@
 .nav-bar {
   background: repeating-radial-gradient(
     circle,
-    #8FB6BF,
-    #D96E30 13px,
-    #A62F24 12px,
-    #A62F24 10px
+    #8fb6bf,
+    #d96e30 13px,
+    #a62f24 12px,
+    #a62f24 10px
   );
   border: 1.5px solid #c90314;
   box-shadow: 2px 2px 2px 1px #a5505c;
@@ -19,21 +19,20 @@
 
 .home-link,
 .favorites-link {
-  border: .5px solid #ffe668;
+  border: 0.5px solid #ffe668;
   border-radius: 5px;
-  box-shadow: 1px 1px 1px .25px rgb(85, 144, 216);
-  font-family: 'Bungee', cursive;
+  box-shadow: 1px 1px 1px 0.25px rgb(85, 144, 216);
+  font-family: "Bungee", cursive;
   font-size: 1.5rem;
-  padding: 0.40rem;
+  padding: 0.4rem;
   text-decoration: none;
   text-shadow: 1px 1px 5px #ae8b8b;
   transition: 0.5s;
 }
 
 .home-link:hover {
-    background-color: #BF4B21;
+  background-color: #bf4b21;
 }
-
 
 .link-box {
   display: flex;
@@ -46,13 +45,13 @@
 }
 
 .text {
-    background-color: #8FB6BF;
-    color: #D9D384;
+  background-color: #8fb6bf;
+  color: #d9d384;
 }
 
 .nav-title {
-  color: #D9D384;
-  font-family: 'Bevan', cursive;
+  color: #d9d384;
+  font-family: "Bevan", cursive;
   font-size: 6rem;
   margin-top: -2%;
   text-shadow: 5px 5px 10px #fc3f2e;

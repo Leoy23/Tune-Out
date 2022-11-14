@@ -1,14 +1,18 @@
-import PropTypes from "prop-types";
-import React from "react";
-import "./Favorites.css"
+import PropTypes from 'prop-types';
+import React from 'react';
+import './Favorites.css';
 
 export const Favorites = ({ id, date, name, url, img, deleteFav }) => {
   return (
-    <article className="fav-cards">
+    <article className='fav-cards'>
       <h3>{name}</h3>
       <p>Date: {date}</p>
-      <a className="fav-ticket-link" href={`${url}`}>GET TICKETS HERE!</a>
-      <button className="delete-fav-btn" onClick={() => deleteFav(id)}>Un-Fave</button>
+      <a className='fav-ticket-link' href={`${url}`}>
+        GET TICKETS HERE!
+      </a>
+      <button className='delete-fav-btn' onClick={() => deleteFav(id)}>
+        Un-Fave
+      </button>
     </article>
   );
 };
