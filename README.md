@@ -47,7 +47,7 @@ Tune - Out was created for all the Hip-Hop and R&B lovers/enthusiasts in the Sea
 <p align="center"><img width="500" src="https://user-images.githubusercontent.com/106054421/201592644-c2c8c9b8-70bf-4c2b-968b-85ddde2d27d0.png" alt="tune-out 404 error page"></p>
 
 <br />
-This project was assigned during the third module of Turing's Front-End Engineering program, about 18 weeks into its students learning how to code. The primary focus was to give students an opportunity to showcase what they've learned and their own unique styles. The project specs are outlined <a href="https://frontend.turing.edu/projects/module-3/showcase.html">here</a>.
+This project was assigned during the third module of Turing's Front-End Engineering program, about 17 weeks into its students learning how to code. The primary focus was to give students an opportunity to showcase what they've learned and their own unique styles. The project specs are outlined <a href="https://frontend.turing.edu/projects/module-3/showcase.html">here</a>.
 
 ### Built With
 
