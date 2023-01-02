@@ -1,10 +1,13 @@
 .events-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  font-family: 'Bevan', cursive;
-  height: 100%;
-  width: 100%;
-  flex-wrap: wrap;
-  margin-right: 30%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 3rem;
+  font-family: "Bevan", cursive;
+  padding: 2rem;
+}
+
+@media only screen and (max-width : 667px) {
+  .events-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

@@ -4,7 +4,7 @@
   height: 100vh;
   width: 100%;
   background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.9)),
-    url('../../assets/speakers.jpg') no-repeat center center fixed;
+    url("../../assets/speakers.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -28,7 +28,7 @@
   border-radius: 5px;
   box-shadow: 1px 1px 1px 0.25px rgb(85, 144, 216);
   color: #d9d384;
-  font-family: 'Bungee', cursive;
+  font-family: "Bungee", cursive;
   font-size: 1.5rem;
   margin: 0;
   padding: 0.35rem;
@@ -40,4 +40,10 @@
 
 .explore-btn:hover {
   background-color: #bf4b21;
+}
+
+@media only screen and (max-width: 667px) {
+  .tune-out-title {
+    font-size: 3rem;
+  }
 }

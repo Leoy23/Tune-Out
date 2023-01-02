@@ -1,53 +1,38 @@
 .display-cards {
-  align-items: center;
   background-color: #d9d384;
-  box-sizing: border-box;
+  box-shadow: 2px 4px 4px #a62f24;
   border: 0.6rem solid #bf4b21;
   border-radius: 2rem;
+  box-sizing: border-box;
   color: #bf4b21;
-  display: flex;
-  flex-direction: column;
-  font-family: 'Barlow', sans-serif;
+  font-family: "Barlow", sans-serif;
   font-size: 0.9rem;
-  height: auto;
-  justify-content: space-evenly;
-  margin-bottom: 1rem;
-  margin-left: 1rem;
-  margin-top: 2rem;
-  padding: 0.5rem;
+  padding: 1.5rem;
   text-align: center;
-  width: 30%;
 }
 
-img {
-  align-items: center;
-  border-radius: 2rem;
-  width: 90%;
-  height: 30%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 1rem;
+.display-cards:hover {
+  background-color: #a62f24;
+  color: #d9d384;
 }
 
 .img-container {
-  background-color: #8fb6bf;
   border-radius: 2rem;
-  margin: 0;
+  padding: 1rem;
 }
 
-.wrapper {
-  background-color: #bf4b21;
+.artist-pic {
   border-radius: 2rem;
-  padding: 0.75rem;
-  margin: 0;
+  border: 5px solid #bf4b21;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
 }
 
 .update-favs {
-  color: #a62f24;
-  font-size: 0.5rem;
-  font-weight: 550;
-  padding-bottom: 0.25rem;
+  color: #8fb6bf;
 }
 
 .fav-btn {
@@ -56,9 +41,8 @@ img {
   border-radius: 5px;
   box-shadow: 1px 1px 1px 0.25px rgb(85, 144, 216);
   color: #d9d384;
-  font-family: 'Bungee', cursive;
+  font-family: "Bungee", cursive;
   font-size: 1.5rem;
-  margin: 0;
   padding: 0.35rem;
   position: static;
   text-decoration: none;
@@ -74,4 +58,11 @@ img {
   color: #8fb6bf;
   text-shadow: 2px 2px 2px 6px #d96e30;
   padding: 1rem;
+}
+
+.fav-status {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
 }

@@ -56,3 +56,33 @@
   margin-top: -2%;
   text-shadow: 5px 5px 10px #fc3f2e;
 }
+
+@media (max-width: 280px) {
+  .nav-title {
+    font-size: 1rem;
+  }
+
+  .link-box {
+    margin-right: 8%;
+  }
+}
+
+@media (max-width: 375px) {
+  .nav-title {
+    font-size: 3rem;
+  }
+
+  .link-box {
+    justify-content: space-evenly;
+  }
+}
+
+@media (max-width: 667px) {
+  .nav-title {
+    font-size: 2rem;
+  }
+
+  .link-box {
+    padding: 4rem;
+  }
+}

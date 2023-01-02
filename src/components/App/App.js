@@ -27,7 +27,7 @@ const App = () => {
         });
     };
     getAllEvents();
-  }, []);
+  }, [error]);
 
   const addToFavs = (id, name, date, url) => {
     const favEvent = {

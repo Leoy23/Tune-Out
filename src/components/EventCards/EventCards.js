@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types';
-import React, { useState } from 'react';
-import './EventCards.css';
+import PropTypes from "prop-types";
+import React, { useState } from "react";
+import "./EventCards.css";
 
 const EventCards = ({
   id,
@@ -15,42 +15,54 @@ const EventCards = ({
   deleteFav,
 }) => {
   const [favStatus, setFavStatus] = useState(false);
-  const [text, setText] = useState('Fave');
+  const [text, setText] = useState("Fave");
 
   const handleClick = () => {
     if (!favStatus) {
       setFavStatus(true);
       addToFavs(id, name, date, url);
-      setText('Un-Fave');
+      setText("Un-Fave");
     } else {
       setFavStatus(false);
       deleteFav(id);
-      setText('Fave');
+      setText("Fave");
     }
   };
 
   return (
-    <article className='display-cards'>
-      <div className='wrapper'>
-        <div className='img-container'>
-          <img className='artist-pic' src={image} alt='artist' />
-        </div>
+    <article className="display-cards">
+      <div className="img-container">
+        <img
+          className="artist-pic"
+          src={image}
+          alt="artist"
+          height={"70%"}
+          width={"80%"}
+        />
       </div>
-      <h3>{name}</h3>
-      <p>Date: {date}</p>
-      <h4>
-        Venue: <i>{venue}</i>
-      </h4>
-      <h4>
-        Location: {city}, {state}
-      </h4>
-      <a className='ticket-links' href={`${url}`}>
-        <i>GET TICKETS HERE!</i>
-      </a>
-      {favStatus && <span className='update-favs'>Added to your faves!</span>}
-      <button className='fav-btn' onClick={handleClick}>
-        {text}
-      </button>
+      <div className="card-info">
+        <h3>{name}</h3>
+        <p>Date: {date}</p>
+        <h4>
+          Venue: <i>{venue}</i>
+        </h4>
+        <h4>
+          Location: {city}, {state}
+        </h4>
+        <a className="ticket-links" href={`${url}`}>
+          GET TICKETS HERE!
+        </a>
+      </div>
+      <div className="fav-status">
+        <div className="status-span">
+          {favStatus && (
+            <span className="update-favs">Added to your faves!</span>
+          )}
+        </div>
+        <button className="fav-btn" onClick={handleClick}>
+          {text}
+        </button>
+      </div>
     </article>
   );
 };
