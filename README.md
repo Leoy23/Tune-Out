@@ -3,7 +3,7 @@
 <!-- HEADER -->
 <h1 align="center">Tune - Out</h1>
 
-<h3 align="center"Music events app for Hip-Hop and R&B lovers!</h3>
+<h3 align="center">Music events app for Hip-Hop and R&B lovers!</h3>
 
 <h4 align="center"><a href="https://tune-out.vercel.app"><strong>Deploy Link</strong></a> | <a href="https://github.com/Leoy23/Tune-Out"><strong>Explore The Docs »</strong></a></h4>
 
