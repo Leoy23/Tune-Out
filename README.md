@@ -3,7 +3,7 @@
 <!-- HEADER -->
 <h1 align="center">Tune - Out</h1>
 
-<h3 align="center">For Hip-Hop and R&B Lovers!</h3>
+<h3 align="center"Music events app for Hip-Hop and R&B lovers!</h3>
 
 <h4 align="center"><a href="https://tune-out.vercel.app"><strong>Deploy Link</strong></a> | <a href="https://github.com/Leoy23/Tune-Out"><strong>Explore The Docs »</strong></a></h4>
 
@@ -40,7 +40,7 @@ Tune - Out was created for all the Hip-Hop and R&B lovers/enthusiasts in the Sea
 <p align="center"><img width="500" src="https://user-images.githubusercontent.com/106054421/201592610-34c1ff73-01b4-4b82-986d-5454589779a6.png" alt="tune-out landing page"></p>
 
 <h3 align="center">Home Display</h3>
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/106054421/201592634-41256786-aaaf-465f-bd71-1c3952cf180d.png" alt="tune-out home page display with a navigation bar and and event cards"></p>
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/106054421/210191741-c5896797-354d-4e60-8cb1-1fb1d373bd16.png" alt="tune-out home page display with a navigation bar and and event cards"></p>
 
 
 <h3 align="center">Status 404 Display</h3>
